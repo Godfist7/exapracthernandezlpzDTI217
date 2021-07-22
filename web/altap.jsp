@@ -108,6 +108,7 @@
                            float totalDesc = (totalHosp * descHosp) - totalHosp;
                          %>
                          <h3>$<%=totalDesc%></h3>
+                         
                         <!--diashhosp * cobrohosp = totalhosp -->
                          <!--totalhosp * .10 = x  -->
                          <!--totalhosp - x = deschosp  -->
