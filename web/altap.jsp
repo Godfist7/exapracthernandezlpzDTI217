@@ -69,7 +69,7 @@
             String nombre=request.getParameter("nombre");
             String apePaterno=request.getParameter("appat");
             String apeMaterno=request.getParameter("apmat");
-            String diasHosp= request.getParameter("diash");
+             int diasHosp= Integer.parseInt(request.getParameter("diash"));
             int cobroHosp = Integer.parseInt(request.getParameter("cobroh"));
             int descHosp = Integer.parseInt(request.getParameter("desch"));
             
@@ -96,7 +96,18 @@
                         <h3>Dias Hospitalizacion:  <%= diasHosp%></h3>
                         <h3>Cobro por Hospitalizacion:  <%= cobroHosp%></h3>
                         <h3>Descuento por Hospitalizacion:  <%= descHosp%></h3>
-                        
+                        <hr>
+                        <h3>Total de Hospitalizacion: </h3>
+                        <%
+                         float totalHosp = cobroHosp * diasHosp;
+                         %>
+                         <h3>$<%=totalHosp%></h3>
+                         <hr>
+                         <h3>Descuento por Dias de Hospitalizacion(%10):</h3>
+                         <%
+                           float totalDesc = (totalHosp * descHosp) - totalHosp;
+                         %>
+                         <h3>$<%=totalDesc%></h3>
                         <!--diashhosp * cobrohosp = totalhosp -->
                          <!--totalhosp * .10 = x  -->
                          <!--totalhosp - x = deschosp  -->
